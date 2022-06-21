@@ -3,7 +3,9 @@
 # https://datalab.ucdavis.edu/2019/08/27/creating-co-author-networks-in-r/
 
 library(scholar)
+library(scholarnetwork)
 library(igraph)
+library(dplyr)
 
 id="EwXUDAQAAAAJ" # id from url on Google Scholar page
 user = get_publications(id) 
