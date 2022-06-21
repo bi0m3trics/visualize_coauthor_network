@@ -106,6 +106,9 @@ user.coauthors = lapply(user.coauthors, function(x) str_replace_all(x,"\\.",""))
 # Get the unique authors form the cleaned list
 user.coauthors.unique = unique(unlist(user.coauthors))[order(unique(unlist(user.coauthors)))]
 
+# Get the numbers of publications by coauthor
+sort(table(unlist(user.coauthors)), decreasing = TRUE)
+
 # Get the connections that involve or are made by two separate parties.
 user.bipartite.edges = lapply(user.coauthors, function(x) {user.coauthors.unique %in% x})
 user.bipartite.edges = do.call("cbind", user.bipartite.edges) # dimension is number of authors x number of papers
