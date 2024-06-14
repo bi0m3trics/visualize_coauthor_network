@@ -3,7 +3,11 @@
 # https://datalab.ucdavis.edu/2019/08/27/creating-co-author-networks-in-r/
 
 library(scholar)
-library(scholarnetwork)
+
+if(!require("devtools")) install.packages("devtools")
+library("devtools")
+install_github("pablobarbera/scholarnetwork")
+
 library(igraph)
 library(dplyr)
 
