@@ -144,8 +144,10 @@ network <- graph_from_adjacency_matrix(mat, mode = "undirected")
 fc <- cluster_walktrap(network, steps = 4)
 
 # Set the colors using ochRe
-# devtools::install_github("ropenscilabs/ochRe")
-library(ochRe)
+if(!require("devtools")) install.packages("devtools")
+library("devtools")
+install_github("ropenscilabs/ochRe")
+                        
 pal<-colorRampPalette(ochre_palettes[["mccrea"]])
 new_cols <- pal(max(fc$membership))[membership(fc)]
 V(network)$color = new_cols
