@@ -7,6 +7,7 @@ library(scholar)
 if(!require("devtools")) install.packages("devtools")
 library("devtools")
 install_github("pablobarbera/scholarnetwork")
+library(scholarnetwork)
 
 library(igraph)
 library(dplyr)
@@ -147,6 +148,7 @@ fc <- cluster_walktrap(network, steps = 4)
 if(!require("devtools")) install.packages("devtools")
 library("devtools")
 install_github("ropenscilabs/ochRe")
+library(ochRe)
                         
 pal<-colorRampPalette(ochre_palettes[["mccrea"]])
 new_cols <- pal(max(fc$membership))[membership(fc)]
